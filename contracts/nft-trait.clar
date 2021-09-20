@@ -1,15 +1,15 @@
+(define-trait nft-trait
+  (
+    ;; Last token ID, limited to uint range
+    (get-last-token-id () (response uint uint))
 
-;; nft-trait
-;; <add a description here>
+    ;; URI for metadata associated with the token
+    (get-token-uri (uint) (response (optional (string-ascii 256)) uint))
 
-;; constants
-;;
+     ;; Owner of a given token identifier
+    (get-owner (uint) (response (optional principal) uint))
 
-;; data maps and vars
-;;
-
-;; private functions
-;;
-
-;; public functions
-;;
+    ;; Transfer from the sender to a new principal
+    (transfer (uint principal principal) (response bool uint))
+  )
+)
