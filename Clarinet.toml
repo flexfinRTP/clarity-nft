@@ -1,10 +1,11 @@
 [project]
 name = "clarity-nft"
 requirements = []
-[contracts.my-nft]
-path = "contracts/my-nft.clar"
-depends_on = ["nft-trait]
 
-[contracts.nft-trait]
-path = "contracts/nft-trait.clar"
+[contracts.sip009-nft-trait]
+path = "contracts/sip009-nft-trait.clar"
 depends_on = []
+
+[contracts.pogs]
+path = "contracts/pogs.clar"
+depends_on = ["sip009-nft-trait"]
